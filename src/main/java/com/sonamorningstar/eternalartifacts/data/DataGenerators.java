@@ -1,6 +1,8 @@
 package com.sonamorningstar.eternalartifacts.data;
 
 import com.sonamorningstar.eternalartifacts.EternalArtifacts;
+import com.sonamorningstar.eternalartifacts.data.languages.LanguageEng;
+import com.sonamorningstar.eternalartifacts.data.languages.LanguageTur;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -17,9 +19,17 @@ public class DataGenerators {
         ExistingFileHelper helper = event.getExistingFileHelper();
 
         if (event.includeServer()) {
-            BlockTags blockTags = new BlockTags(generator, helper);
+            BlockTagsProv blockTags = new BlockTagsProv(generator, helper);
             generator.addProvider(blockTags);
-            generator.addProvider(new ItemTags(generator, blockTags, helper));
+            generator.addProvider(new ItemTagsProv(generator, blockTags, helper));
+            generator.addProvider(new LootTablesProv(generator));
+        }
+        if (event.includeClient()) {
+            generator.addProvider(new ItemModelsProv(generator, helper));
+            generator.addProvider(new BlockStatesProv(generator, helper));
+            generator.addProvider(new SoundsProv(generator, helper));
+            generator.addProvider(new LanguageEng(generator, "en_us"));
+            generator.addProvider(new LanguageTur(generator, "tr_tr"));
         }
     }
 }

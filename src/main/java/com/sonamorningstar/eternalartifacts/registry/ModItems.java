@@ -2,7 +2,7 @@ package com.sonamorningstar.eternalartifacts.registry;
 
 import com.sonamorningstar.eternalartifacts.EternalArtifacts;
 import com.sonamorningstar.eternalartifacts.item.curio.CurioItem;
-import com.sonamorningstar.eternalartifacts.item.curio.artifacts.HolyDaggerItem;
+import com.sonamorningstar.eternalartifacts.item.curio.artifacts.MedkitItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -23,7 +23,13 @@ public class ModItems {
         public ItemStack makeIcon() { return new ItemStack(HOLY_DAGGER.get()); }
     };
 
-    public static final RegistryObject<CurioItem> HOLY_DAGGER = ITEMS.register("holy_dagger", HolyDaggerItem::new);
+    public static final RegistryObject<Item> PLANT_MATTER = ITEMS.register("plant_matter",
+            ()-> new Item(new Item.Properties().tab(CREATIVE_TAB)));
+    public static final RegistryObject<Item> ORANGE = ITEMS.register("orange",
+            ()-> new Item(new Item.Properties().tab(CREATIVE_TAB).food(ModFoods.ORANGE)));
+
+    public static final RegistryObject<CurioItem> HOLY_DAGGER = ITEMS.register("holy_dagger", CurioItem::new);
+    public static final RegistryObject<CurioItem> MEDKIT = ITEMS.register("medkit", MedkitItem::new);
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

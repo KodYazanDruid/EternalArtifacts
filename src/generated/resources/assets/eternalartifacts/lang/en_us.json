@@ -1,0 +1,10 @@
+{
+  "block.eternalartifacts.tinkering_table": "Tinkering Table",
+  "eternalartifacts.subtitle.holy_dagger_activate": "Holy dagger used.",
+  "item.eternalartifacts.holy_dagger": "Holy Dagger",
+  "item.eternalartifacts.medkit": "Medkit",
+  "item.eternalartifacts.orange": "Orange",
+  "item.eternalartifacts.plant_matter": "Plant Matter",
+  "item.group.eternalartifacts": "Eternal Artifacts",
+  "tooltip.eternalartifacts.artifact": "Placeholder tooltip."
+}

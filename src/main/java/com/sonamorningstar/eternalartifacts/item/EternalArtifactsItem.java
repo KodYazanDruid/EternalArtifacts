@@ -4,8 +4,6 @@ import com.sonamorningstar.eternalartifacts.registry.ModItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -28,13 +26,6 @@ public class EternalArtifactsItem extends Item {
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack item, Level world, List<Component> tooltip,
                                 TooltipFlag flags) {
-        tooltip.add(new TranslatableComponent("eternalartifacts.item.tooltip").withStyle(ChatFormatting.AQUA));
-    }
-
-    public boolean isOnCooldown(Item item, LivingEntity entity) {
-        if (entity instanceof Player player) {
-            return player.getCooldowns().isOnCooldown(item);
-        }
-        return true;
+        tooltip.add(new TranslatableComponent("tooltip.eternalartifacts.artifact").withStyle(ChatFormatting.AQUA));
     }
 }
