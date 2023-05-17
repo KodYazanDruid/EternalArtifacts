@@ -25,11 +25,11 @@ public class HolyDaggerEvents extends CurioEvents {
         float damage = event.getAmount();
         if(!living.level.isClientSide()
                 && living instanceof Player player
+                && hasCurio(holyDagger, player)
                 && !isOnCooldown(holyDagger, player)
                 && (entityHealth <= entityMaxHealth / 4 || entityHealth <= damage)) {
 
             if( player.hasEffect(MobEffects.ABSORPTION)) { player.removeEffect(MobEffects.ABSORPTION); }
-
             player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 200, 4, true, false));
             addCooldown(holyDagger, player, 1200);
             player.getLevel().playSound(null, getWearerPos(player), ModSounds.HOLY_DAGGER_ACTIVATE.get(),

@@ -1,10 +1,12 @@
 {
   "block.eternalartifacts.tinkering_table": "Tamirci Masas\u0131",
   "eternalartifacts.subtitle.holy_dagger_activate": "Kutsal k\u0131l\u0131\u00E7 kullan\u0131ld\u0131.",
+  "item.eternalartifacts.frog_legs": "Kurba\u011Fa Bacaklar\u0131",
   "item.eternalartifacts.holy_dagger": "Kutsal K\u0131l\u0131\u00E7",
-  "item.eternalartifacts.medkit": "Medkit",
+  "item.eternalartifacts.medkit": "Sa\u011Fl\u0131k \u00C7antas\u0131",
   "item.eternalartifacts.orange": "Portakal",
   "item.eternalartifacts.plant_matter": "Bitki Maddesi",
+  "item.eternalartifacts.withering_sword": "\u00C7\u00FCr\u00FCyen K\u0131l\u0131\u00E7",
   "item.group.eternalartifacts": "Ebedi Eserler",
   "tooltip.eternalartifacts.artifact": "Yertutucu a\u00E7\u0131klama."
 }

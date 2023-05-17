@@ -1,6 +1,6 @@
-package com.sonamorningstar.eternalartifacts.item.curio.artifacts;
+package com.sonamorningstar.eternalartifacts.item.curios.artifacts;
 
-import com.sonamorningstar.eternalartifacts.item.curio.CurioItem;
+import com.sonamorningstar.eternalartifacts.item.curios.CurioItem;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
@@ -8,8 +8,6 @@ import net.minecraft.world.item.ItemStack;
 import top.theillusivec4.curios.api.SlotContext;
 
 public class MedkitItem extends CurioItem {
-
-    public MedkitItem() {}
 
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {

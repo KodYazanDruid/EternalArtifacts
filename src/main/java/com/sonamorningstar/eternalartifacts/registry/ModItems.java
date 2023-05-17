@@ -1,11 +1,10 @@
 package com.sonamorningstar.eternalartifacts.registry;
 
 import com.sonamorningstar.eternalartifacts.EternalArtifacts;
-import com.sonamorningstar.eternalartifacts.item.curio.CurioItem;
-import com.sonamorningstar.eternalartifacts.item.curio.artifacts.MedkitItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
+import com.sonamorningstar.eternalartifacts.item.tools.WitheringSwordItem;
+import com.sonamorningstar.eternalartifacts.item.curios.CurioItem;
+import com.sonamorningstar.eternalartifacts.item.curios.artifacts.MedkitItem;
+import net.minecraft.world.item.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -29,7 +28,10 @@ public class ModItems {
             ()-> new Item(new Item.Properties().tab(CREATIVE_TAB).food(ModFoods.ORANGE)));
 
     public static final RegistryObject<CurioItem> HOLY_DAGGER = ITEMS.register("holy_dagger", CurioItem::new);
+    public static final RegistryObject<CurioItem> FROG_LEGS = ITEMS.register("frog_legs", CurioItem::new);
     public static final RegistryObject<CurioItem> MEDKIT = ITEMS.register("medkit", MedkitItem::new);
+
+    public static final RegistryObject<SwordItem> WITHERING_SWORD = ITEMS.register("withering_sword", WitheringSwordItem::new);
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

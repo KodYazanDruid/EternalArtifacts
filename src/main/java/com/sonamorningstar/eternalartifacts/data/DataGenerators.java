@@ -1,8 +1,6 @@
 package com.sonamorningstar.eternalartifacts.data;
 
 import com.sonamorningstar.eternalartifacts.EternalArtifacts;
-import com.sonamorningstar.eternalartifacts.data.languages.LanguageEng;
-import com.sonamorningstar.eternalartifacts.data.languages.LanguageTur;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -28,8 +26,8 @@ public class DataGenerators {
             generator.addProvider(new ItemModelsProv(generator, helper));
             generator.addProvider(new BlockStatesProv(generator, helper));
             generator.addProvider(new SoundsProv(generator, helper));
-            generator.addProvider(new LanguageEng(generator, "en_us"));
-            generator.addProvider(new LanguageTur(generator, "tr_tr"));
+            generator.addProvider(new LanguageProv(generator, "en_us"));
+            generator.addProvider(new LanguageProv(generator, "tr_tr"));
         }
     }
 }

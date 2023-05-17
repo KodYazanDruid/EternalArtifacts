@@ -1,8 +1,6 @@
 {
   "replace": false,
   "values": [
-    "eternalartifacts:holy_dagger",
-    "eternalartifacts:medkit",
     "eternalartifacts:frog_legs"
   ]
 }
