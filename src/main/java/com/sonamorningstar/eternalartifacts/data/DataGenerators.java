@@ -1,6 +1,8 @@
 package com.sonamorningstar.eternalartifacts.data;
 
 import com.sonamorningstar.eternalartifacts.EternalArtifacts;
+import com.sonamorningstar.eternalartifacts.compat.tconstruct.ModModifiers;
+import com.sonamorningstar.eternalartifacts.compat.tconstruct.ModifierRecipes;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -21,6 +23,8 @@ public class DataGenerators {
             generator.addProvider(blockTags);
             generator.addProvider(new ItemTagsProv(generator, blockTags, helper));
             generator.addProvider(new LootTablesProv(generator));
+            generator.addProvider(new ModModifiers(generator));
+            generator.addProvider(new ModifierRecipes(generator));
         }
         if (event.includeClient()) {
             generator.addProvider(new ItemModelsProv(generator, helper));

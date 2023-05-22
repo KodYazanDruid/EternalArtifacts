@@ -1,12 +1,19 @@
 {
   "block.eternalartifacts.tinkering_table": "Tinkering Table",
+  "curios.identifier.feet": "Feet",
   "eternalartifacts.subtitle.holy_dagger_activate": "Holy dagger used.",
+  "item.eternalartifacts.axe_of_regrowth": "Axe of Regrowth",
+  "item.eternalartifacts.demon_eye_spawn_egg": "Demon Eye Spawn Egg",
   "item.eternalartifacts.frog_legs": "Frog Legs",
   "item.eternalartifacts.holy_dagger": "Holy Dagger",
+  "item.eternalartifacts.lens": "Lens",
   "item.eternalartifacts.medkit": "Medkit",
   "item.eternalartifacts.orange": "Orange",
   "item.eternalartifacts.plant_matter": "Plant Matter",
   "item.eternalartifacts.withering_sword": "Withering Sword",
   "item.group.eternalartifacts": "Eternal Artifacts",
+  "modifier.eternalartifacts.regrowth": "Regrowth",
+  "modifier.eternalartifacts.regrowth.description": "Tool can regrow grass from plain dirt!",
+  "modifier.eternalartifacts.regrowth.flavor": "For the wild!",
   "tooltip.eternalartifacts.artifact": "Placeholder tooltip."
 }

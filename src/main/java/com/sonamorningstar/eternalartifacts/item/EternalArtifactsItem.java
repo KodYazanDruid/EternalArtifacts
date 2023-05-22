@@ -1,5 +1,6 @@
 package com.sonamorningstar.eternalartifacts.item;
 
+import com.sonamorningstar.eternalartifacts.EternalArtifacts;
 import com.sonamorningstar.eternalartifacts.registry.ModItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -15,7 +16,7 @@ import java.util.List;
 
 public class EternalArtifactsItem extends Item {
     public EternalArtifactsItem(Properties pProperties) {
-        super(pProperties.stacksTo(1).tab(ModItems.CREATIVE_TAB));
+        super(pProperties.stacksTo(1).tab(EternalArtifacts.CREATIVE_TAB));
     }
 
     public EternalArtifactsItem() {

@@ -11,6 +11,8 @@ buildscript {
     }
 }
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
+
+
 plugins {
     id 'eclipse'
     id 'maven-publish'
@@ -112,26 +114,46 @@ repositories {
     maven {
         url = "https://maven.theillusivec4.top/"
     }
+    /*
     maven {
         // location of the maven that hosts JEI files
         name = "Progwml6 maven"
         url = "https://dvs1.progwml6.com/files/maven/"
     }
+     */
     maven {
         // location of a maven mirror for JEI files, as a fallback
         name = "ModMaven"
         url = "https://modmaven.dev"
+    }
+    maven {
+        url = "https://www.cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+    maven {
+        name 'DVS1 Maven FS'
+        url 'https://dvs1.progwml6.com/files/maven'
     }
 }
 
 dependencies {
     minecraft  'net.minecraftforge:forge:1.18.2-40.2.2'
 
-    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_minecraft_version}-${curios_version}:api")
-    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_minecraft_version}-${curios_version}")
+    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${mc_version}-${curios_version}:api")
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${mc_version}-${curios_version}")
 
     compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api")
     runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
+
+    implementation fg.deobf("curse.maven:jade-324717:${jade_id}")
+
+    implementation fg.deobf("curse.maven:geckolib-388172:4181370")
+
+    implementation fg.deobf("slimeknights.mantle:Mantle:${mc_version}-${mantle_build}")
+    implementation fg.deobf("slimeknights.tconstruct:TConstruct:${mc_version}-${tinkers_build}")
+
 }
 
 jar {

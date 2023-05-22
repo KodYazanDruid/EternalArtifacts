@@ -1,8 +1,8 @@
 package com.sonamorningstar.eternalartifacts.item.tools;
 
+import com.sonamorningstar.eternalartifacts.EternalArtifacts;
 import com.sonamorningstar.eternalartifacts.entity.projectile.CustomWitherSkull;
-import com.sonamorningstar.eternalartifacts.item.tiers.WitheringTier;
-import com.sonamorningstar.eternalartifacts.registry.ModItems;
+import com.sonamorningstar.eternalartifacts.registry.ModTiers;
 import com.sonamorningstar.eternalartifacts.utils.RayTraceUtil;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -15,8 +15,7 @@ import net.minecraft.world.phys.HitResult;
 
 public class WitheringSwordItem extends SwordItem {
     public WitheringSwordItem() {
-        super(WitheringTier.WITHERING.getToolTier(), 5, -2.4F, new Properties().tab(ModItems.CREATIVE_TAB));
-
+        super(ModTiers.WITHERING.getToolTier(), 5, -2.4F, new Properties().tab(EternalArtifacts.CREATIVE_TAB));
     }
 
     @Override

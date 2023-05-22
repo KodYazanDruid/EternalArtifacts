@@ -1,53 +1,51 @@
-package com.sonamorningstar.eternalartifacts.item.tiers;
+package com.sonamorningstar.eternalartifacts.registry;
 
 import com.sonamorningstar.eternalartifacts.EternalArtifacts;
+import com.sonamorningstar.eternalartifacts.registry.ModItems;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
 
-import java.util.function.Supplier;
-
-public enum WitheringTier {
-    WITHERING("withering", ()-> Ingredient.of(Items.WITHER_SKELETON_SKULL));
+public enum ModTiers {
+    WITHERING("withering", 2072, 12F, 3.0F, 3, 23, Ingredient.of(Items.WITHER_SKELETON_SKULL)),
+    REGROWTH("regrowth", 864, 9F, 2.0F, 2, 15, Ingredient.of(ModItems.PLANT_MATTER.get()));
 
     private final Tier toolTier;
 
-    WitheringTier(String withering, Supplier<Ingredient> repairIngredient) {
+    ModTiers(String name, int uses, float speed, float damageBonus, int level, int enchValue, Ingredient repairIngredient) {
         this.toolTier = new Tier() {
             @Override
             public int getUses() {
-                return Tiers.DIAMOND.getUses() * 2;
+                return uses;
             }
 
             @Override
             public float getSpeed() {
-                return Tiers.DIAMOND.getSpeed() * 1.5F;
+                return speed;
             }
 
             @Override
             public float getAttackDamageBonus() {
-                return Tiers.DIAMOND.getAttackDamageBonus() * 1.75F;
+                return damageBonus;
             }
 
             @Override
             public int getLevel() {
-                return Tiers.DIAMOND.getLevel();
+                return level;
             }
 
             @Override
             public int getEnchantmentValue() {
-                return Tiers.GOLD.getEnchantmentValue();
+                return enchValue;
             }
 
             @Override
-            public Ingredient getRepairIngredient() {
-                return Ingredient.of(Items.WITHER_SKELETON_SKULL);
-            }
+            public Ingredient getRepairIngredient() {return repairIngredient;}
 
             @Override
             public String toString() {
-                return EternalArtifacts.MOD_ID + ":" + withering;
+                return EternalArtifacts.MOD_ID + ":" + name;
             }
         };
     }

@@ -1,0 +1,20 @@
+{
+  "type": "tconstruct:modifier",
+  "inputs": [
+    {
+      "item": "eternalartifacts:plant_matter"
+    }
+  ],
+  "tools": {
+    "tag": "tconstruct:modifiable"
+  },
+  "slots": {
+    "abilities": 1
+  },
+  "allow_crystal": true,
+  "result": {
+    "name": "eternalartifacts:regrowth",
+    "level": 1
+  },
+  "max_level": 1
+}

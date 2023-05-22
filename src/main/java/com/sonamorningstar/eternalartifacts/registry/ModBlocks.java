@@ -23,7 +23,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> TINKERING_TABLE = registerBlock("tinkering_table",
             ()-> new TinkeringTableBlock(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE).noOcclusion()),
-            ModItems.CREATIVE_TAB);
+            EternalArtifacts.CREATIVE_TAB);
 
     private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block) {
         return BLOCKS.register(name, block);
