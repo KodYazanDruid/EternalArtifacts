@@ -20,7 +20,7 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<DemonEyeEntity>> DEMON_EYE = ENTITIES.register("demon_eye",
             ()-> EntityType.Builder.of(DemonEyeEntity::new, MobCategory.MONSTER)
-                    .sized(0.8F , 0.8F)
+                    .sized(0.6F , 0.6F)
                     .build(new ResourceLocation(EternalArtifacts.MOD_ID, "demon_eye").toString()));
 
 

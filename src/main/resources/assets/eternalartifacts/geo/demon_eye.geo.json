@@ -12,13 +12,13 @@
 			},
 			"bones": [
 				{
-					"name": "entity",
+					"name": "body",
 					"pivot": [0, 0, 0],
 					"rotation": [0, 180, 0]
 				},
 				{
 					"name": "capillary",
-					"parent": "entity",
+					"parent": "body",
 					"pivot": [0, 0, 0]
 				},
 				{
@@ -159,7 +159,7 @@
 				},
 				{
 					"name": "eye",
-					"parent": "entity",
+					"parent": "body",
 					"pivot": [0, 0, -1],
 					"cubes": [
 						{"origin": [-4, 4, -3], "size": [8, 8, 8], "uv": [0, 0]}
