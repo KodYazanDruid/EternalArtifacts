@@ -48,6 +48,10 @@ public class EternalArtifacts {
         * Axe of Regrowth
         * Shield of Cthulhu
         * Withering Sword
+        * The Ender (Sword)
+        * Climbing Glowes
+        * Clinging thing
+        *
          */
 
         if(modList.isLoaded("tconstruct")) { TConstructCompat.register(eventBus);}

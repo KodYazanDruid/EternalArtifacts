@@ -42,8 +42,7 @@ public class DemonEyeEntity extends FlyingMob implements Enemy, IAnimatable {
                 .add(Attributes.MAX_HEALTH, 8.0D)
                 .add(Attributes.ATTACK_DAMAGE, 4.0F)
                 .add(Attributes.ATTACK_SPEED, 1.0F)
-                .add(Attributes.MOVEMENT_SPEED, 1F)
-                .add(Attributes.FLYING_SPEED, 1F).build();
+                .add(Attributes.FLYING_SPEED, 3F).build();
     }
 
     @Override
@@ -120,16 +119,16 @@ public class DemonEyeEntity extends FlyingMob implements Enemy, IAnimatable {
         public void start() {
             LivingEntity target = taskOwner.getTarget();
             if (target != null){
-                taskOwner.getMoveControl().setWantedPosition(target.getX(), target.getY() + 1, target.getZ(), 1F);
+                taskOwner.getMoveControl().setWantedPosition(target.getX(), target.getY() + 1, target.getZ(), taskOwner.getAttributeValue(Attributes.FLYING_SPEED));
             }
         }
     }
 
     static class AIRandomFly extends Goal {
-        private final DemonEyeEntity demoneye;
+        private final DemonEyeEntity taskOwner;
 
-        public AIRandomFly(DemonEyeEntity pDemonEyeEntity) {
-            this.demoneye = pDemonEyeEntity;
+        public AIRandomFly(DemonEyeEntity demonEye) {
+            this.taskOwner = demonEye;
             this.setFlags(EnumSet.of(Goal.Flag.MOVE));
         }
 
@@ -138,24 +137,24 @@ public class DemonEyeEntity extends FlyingMob implements Enemy, IAnimatable {
          * method as well.
          */
         public boolean canUse() {
-            return this.demoneye.navigation.isDone();
+            return taskOwner.navigation.isDone();
         }
 
         /**
          * Returns whether an in-progress EntityAIBase should continue executing
          */
-        public boolean canContinueToUse() { return this.demoneye.navigation.isInProgress(); }
+        public boolean canContinueToUse() { return taskOwner.navigation.isInProgress(); }
 
 
         /**
          * Execute a one shot task or start executing a continuous task
          */
         public void start() {
-            Random random = this.demoneye.getRandom();
-            double d0 = this.demoneye.getX() + (double)((random.nextFloat() * 2.0F - 1.0F) * 16.0F);
-            double d1 = this.demoneye.getY() + (double)((random.nextFloat() * 2.0F - 1.0F) * 16.0F);
-            double d2 = this.demoneye.getZ() + (double)((random.nextFloat() * 2.0F - 1.0F) * 16.0F);
-            this.demoneye.getMoveControl().setWantedPosition(d0, d1, d2, 2.0D);
+            Random random = taskOwner.getRandom();
+            double d0 = taskOwner.getX() + (double)((random.nextFloat() * 2.0F - 1.0F) * 16.0F);
+            double d1 = taskOwner.getY() + (double)((random.nextFloat() * 2.0F - 1.0F) * 16.0F);
+            double d2 = taskOwner.getZ() + (double)((random.nextFloat() * 2.0F - 1.0F) * 16.0F);
+            taskOwner.getMoveControl().setWantedPosition(d0, d1, d2, taskOwner.getAttributeValue(Attributes.FLYING_SPEED));
         }
     }
 
